@@ -30,15 +30,31 @@ let elQuerySelectorId =   document.querySelector("#demoQuerySelectorId");
 // This would be my favorite selector for the first hand-inn the 21/3 -2019 :) 
 let elQuerySelectorClass = document.querySelector(".demoQuerySelectorClass");
 
+
+//Get all nodes from the class 
+
+let elQuerySelectorClassAll = document.querySelectorAll(".demoQuerySelectorClassAll");
+
+console.log(elQuerySelectorClassAll);
+
+
 //-------------------------------------------------------------------------
 
 //EventListeners can execute functions sitting on the global scope, because 
 // they are functions declarions end therefore hoisted to the top of the file. 
+
+//First element is 0, second is 1... like an array
 elParagraph[0].addEventListener("click", FunctionOne);
+
+//First element is 0, second is 1... like an array
 elDemoClass[0].addEventListener("click", FunctionTwo);
 elId.addEventListener("click", FunctionThree);
 elQuerySelectorId.addEventListener("click", FunctionFour);
 elQuerySelectorClass.addEventListener("click", FunctionFive);
+
+
+//First element is 0, second is 1... like an array
+elQuerySelectorClassAll[0].addEventListener("click", FunctionSix);
 
 
 //Declarative functions, can be acceed in global scope. 
@@ -69,3 +85,21 @@ function FunctionFive() {
   elQuerySelectorClass.classList.add("pink");
 }
 
+// For..of loop is used here, it is pensum for next hand-inn and therefore the ES6 way to do it :) 
+// You are welcome to use for... of loops in your first hand-inn
+
+function FunctionSix() {
+  for(const element of elQuerySelectorClassAll){
+      element.innerHTML = element.innerHTML.toLocaleUpperCase();
+  }
+}
+
+// For..of loop is used here, it is pensum for next hand-inn and therefore the ES6 way to do it :) 
+// You are welcome to use for... of loops in your first hand-inn
+
+const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+
+for(const day of days){
+
+    console.log(day); // print out sunday, monday, tuesday ...
+}
